@@ -16,14 +16,10 @@
         <div class="inner-boxes">
           <div class="top-box">
             <div class="player-choices">
-              <h1>Rock<br></h1>
-              <h1>Paper<br></h1>
-              <h1>Scissors<br></h1>
-              <h1>Lizard<br></h1>
-              <h1>Spock<br></h1>
+              <img src="/images/logo-bonus.svg">
             </div>
             <div class="score-box">
-              <p1>Player Score</p1>
+              <p1>Your Score</p1>
               <div class="score">
                 <output class="house-score">00</output>
               </div>
@@ -37,36 +33,49 @@
           </div>
           <div class="bottom-box">
             <div class="image-box">
-              <img src="/images/bg-pentagon.svg">
+              <img src="/images/bg-pentagon.svg" class="pentagon">
               <div class="icon-box" id="lizard">
-                <div class="icon-boundaries" id="lizard-boundary">
+                <button class="icon-boundaries" id="lizard-button">
                   <img src="/images/icon-lizard.svg">
-                </div>
+                </button>
               </div>
               <div class="icon-box" id="paper">
-                <div class="icon-boundaries">
-                  <img src="/images/icon-paper.svg">
-                </div>
+                  <button class="icon-boundaries" id="paper-button">
+                    <img src="/images/icon-paper.svg">
+                  </button>
               </div>
               <div class="icon-box" id="rock">
-                <div class="icon-boundaries">
+                <button class="icon-boundaries" id="rock-button">
                   <img src="/images/icon-rock.svg">
-                </div>
+                </button>
               </div>
               <div class="icon-box" id="scissors">
-                <div class="icon-boundaries">
+                <button class="icon-boundaries" id="scissors-button">
                   <img src="/images/icon-scissors.svg">
-                </div>
+                </button>
               </div>
               <div class="icon-box" id="spock">
-                <div class="icon-boundaries">
+                <button class="icon-boundaries" id="spock-button">
                   <img src="/images/icon-spock.svg">
-                </div>
+                </button>
               </div>
+            </div>
+          </div>
+          <div class="buttons">
+              <button type="button" class="rules" id="rules">rules</button>
+              <button type="button" class="reset" id="reset">reset</button>
+          </div>
+          <div class="modal-container" id="modal-container">
+            <div class="rules-modal">
+              <button id="modal-close">
+                <img src="/images/icon-close.svg" class="close-button">
+              </button>
+              <img src="/images/image-rules-bonus.svg">
             </div>
           </div>
         </div>
       </div>
+      <script src="main.js"></script>
     </body>
   </main>
 </html>
