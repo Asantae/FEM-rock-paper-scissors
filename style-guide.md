@@ -1,11 +1,3 @@
-# Front-end Style Guide
-
-## Layout
-
-The designs were created to the following widths:
-
-## Colors
-
 ### Primary
 
 - Scissors Gradient: hsl(39, 89%, 49%) to hsl(40, 84%, 53%)

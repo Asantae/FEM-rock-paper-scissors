@@ -12,9 +12,11 @@ img {
     user-select: none;
 }
 
-.container {
-    
+body {
     background: radial-gradient(hsl(214, 47%, 23%),hsl(237, 49%, 15%));
+}
+
+.container {
     height: 100vh;
     min-width: 100vw;
 }
@@ -105,17 +107,18 @@ img {
 }
 
 .top-box {
-    width: 40%;
+    width: 55%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border: 4px solid rgba(150, 150, 150, 0.159);
     height: 150px;
     border-radius: 20px;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom: 100px;
 
 }
+
 .bottom-box {
     display: flex;
     justify-content: space-around;
@@ -168,23 +171,27 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 180px;
+    height: 144px;
     border-radius: 50%;
-    width: 180px;
+    width: 144px;
     box-shadow: inset 0px -6px 1px 0px rgba(0, 0, 0, 0.353);
 }
 
+
+.pentagon {
+
+    height: 360px;
+}
 
 .icon-boundaries {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 135px;
+    height: 110px;
     background-color: white;
     box-shadow: inset 0px 8px 3px 0px rgba(0, 0, 0, 0.247);
     border-radius: 50%;
-    width: 135px;
-    transition: .1s;
+    width: 110px;
 }
 
 .icon-boundaries:hover {
@@ -221,10 +228,6 @@ button {
     top: 75px;
     left: -75px;
     background-color: hsl(189deg 57% 57%);
-}
-
-.pentagon {
-    height: 400px;
 }
 
 /* adjusts effects, positioning, and size of rules and reset buttons */
@@ -266,3 +269,111 @@ button {
     cursor: pointer;
 }
 
+@media (max-width: 1030px) {
+    
+    .top-box {
+        width: 85%;
+    }
+
+    .bottom-box {
+        margin-top: 0px;
+    }
+
+    .player-choices {
+        margin-left: 9px;
+    }
+
+    .score-box {
+        margin-right: 5px;
+    }
+}
+
+@media (max-width: 425px) {
+    .bottom-box {
+        margin-top: 0px;
+    }
+
+    .bonus-rules {
+        height: 325px;
+    }
+
+    .rules-modal {
+        width: 350px;
+        height: 460px;
+    }
+}
+
+@media (max-width: 375px) {
+
+
+    .top-box {
+        width: 100%;
+    }
+
+    .bottom-box {
+        margin-top: 0px;
+    }
+
+    .player-choices {
+        margin-left: 9px;
+    }
+
+    .score-box {
+        margin-right: 5px;
+    }
+
+    .pentagon {
+        height: 200px;
+        margin-bottom: 50px;
+    }
+
+    .icon-box {
+        width: 80px;
+        height: 80px;
+        box-shadow: inset 0px 8px 3px 0px rgba(0, 0, 0, 0.247);
+    }
+
+    .icon-boundaries {
+        height: 62px;
+        width: 62px;
+        box-shadow: inset 0px 8px 3px 0px rgba(0, 0, 0, 0.247);
+    }
+
+    .game-images {
+        height: 60%;
+    }
+
+    .buttons {
+        flex-direction: column;
+        height: 110px;
+        padding-right: 0;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    
+    .reset, .rules {
+        margin-left: 0px;
+        margin-bottom: 20px;
+    }
+
+    #lizard {
+        bottom: 14px;
+        left: 0px;
+    }
+    #paper {
+        top: 31px;
+        left: 164px;
+    }
+    #spock {
+        top: 31px;
+        left: -36px;
+    }
+    #scissors {
+        top: -43px;
+        left: 70px;
+    }
+    #rock {
+        bottom: 14px;
+        left: 136px;
+    }
+}
