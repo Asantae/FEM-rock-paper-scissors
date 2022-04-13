@@ -110,8 +110,6 @@ function game_rules() {
     }
     document.getElementById('player-score').innerHTML = playerScore;
     document.getElementById('house-score').innerHTML = houseScore;
-    console.log('PLAYER CHOICE: ' + playerChoice);
-    console.log('HOUSE CHOICE: ' + y);
 }
 
 
