@@ -28,7 +28,7 @@
 
 - Frontend Mentor - [@Asantae](https://www.frontendmentor.io/profile/Asantae)
 - GIthub URL: [https://github.com/Asantae/]
-- Live Site URL: [https://stately-cactus-9fa8fc.netlify.app/]
+- Live Site URL: [https://silver-sunshine-d556f6.netlify.app/]
 
 ## My process
 
