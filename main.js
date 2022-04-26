@@ -148,7 +148,6 @@ function scoreReset() {
     document.getElementById('house-score').innerHTML = houseScore;
     gameBox.classList.remove('show');
     bottomBox.classList.remove('hide');
-    elemClone.;
     localStorage.clear();
     
 }
