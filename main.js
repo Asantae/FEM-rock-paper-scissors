@@ -18,7 +18,13 @@ document.getElementById('player-score').innerHTML = playerScore;
 document.getElementById('house-score').innerHTML = houseScore;
 var x = '';
 var matchResults = document.getElementById('match-results');
-const iconBox = document.querySelectorAll('.outer-icon-box');
+const delay1 = document.getElementById('delay1');
+const delay2 = document.getElementById('delay2');
+const delay3 = document.getElementById('delay3');
+const modalButtons = document.querySelector('.buttons');
+const replayButton = document.querySelector('.rematch');
+const playerBg = document.querySelector('.player-color-box');
+const houseBg = document.querySelector('.house-color-box');
 const bottomBox = document.getElementById('bottom-box');
 const gameBox = document.getElementById('game-box');
 const choiceLizard = document.getElementById('lizard-button');
@@ -65,6 +71,7 @@ choiceScissor.addEventListener('click', () => {
     game_start(choiceScissor.id);
 })
 choiceSpock.addEventListener('click', () => {
+
     var elem = document.getElementById('spock');
     var elemClone = elem.cloneNode(true);
     elemClone.id = 'clonedId';
@@ -74,10 +81,19 @@ choiceSpock.addEventListener('click', () => {
 })
 // initializes game and sets the players choice. also starts the house's game 
 function game_start(x) {
+    modalButtons.classList.add('hide');
     gameBox.classList.add('show');
     bottomBox.classList.add('hide');
     playerChoice = x;
-    house_choice();
+    setTimeout(() => {delay1.classList.add('show'); }, 500);
+    setTimeout(() => {delay1.classList.remove('show'); delay2.classList.add('show'); }, 1500);
+    setTimeout(() => {delay2.classList.remove('show'); delay3.classList.add('show'); }, 2500);
+    setTimeout(() => {delay3.classList.remove('show'); house_choice(); }, 3500);
+    
+}
+
+function game_delay() {
+
 }
 
 function house_choice() {
@@ -124,61 +140,80 @@ function house_choice() {
 //randomizes house choice,  begins comparing results
 function game_rules() {
     if (playerChoice === y){
-        matchResults.innerHTML = 'tie game!';
+        matchResults.innerHTML = 'tie';
     }else if(playerChoice == choiceRock.id){
         if(y == choicePaper.id || y == choiceSpock.id){
-            matchResults.innerHTML = 'YOU LOSE!';
+            matchResults.innerHTML = 'YOU LOSE';
+            houseBg.classList.add('show');
             houseScore++;
         }else{
-            matchResults.innerHTML = 'You win!';
+            matchResults.innerHTML = 'You win';
+            playerBg.classList.add('show');
             playerScore++;
         }
     }else if(playerChoice == choiceScissor.id){
         if(y == choiceRock.id || y == choiceSpock.id){
-            matchResults.innerHTML = 'YOU LOSE!';
+            matchResults.innerHTML = 'YOU LOSE';
+            houseBg.classList.add('show');
             houseScore++;
         }else{
-            matchResults.innerHTML = 'You win!';
+            matchResults.innerHTML = 'You win';
+            playerBg.classList.add('show');
             playerScore++;
         }
     }else if(playerChoice == choicePaper.id){
         if(y == choiceScissor.id || y == choiceLizard.id){
-            matchResults.innerHTML = 'YOU LOSE!';
+            matchResults.innerHTML = 'YOU LOSE';
+            houseBg.classList.add('show');
             houseScore++;
         }else{
-            matchResults.innerHTML = 'You win!';
+            matchResults.innerHTML = 'You win';
+            playerBg.classList.add('show');
             playerScore++;
         }
     }else if(playerChoice == choiceSpock.id){
         if(y == choicePaper.id || y == choiceLizard.id){
-            matchResults.innerHTML = 'YOU LOSE!';
+            matchResults.innerHTML = 'YOU LOSE';
+            houseBg.classList.add('show');
             houseScore++;
         }else{
-            matchResults.innerHTML = 'You win!';
+            matchResults.innerHTML = 'You win';
+            playerBg.classList.add('show');
             playerScore++;
         }
     }else if(playerChoice == choiceLizard.id){
         if(y == choiceScissor.id || y == choiceRock.id){
-            matchResults.innerHTML = 'YOU LOSE!';
+            matchResults.innerHTML = 'YOU LOSE';
+            houseBg.classList.add('show');
             houseScore++;
         }else{
-            matchResults.innerHTML = 'You win!';
+            matchResults.innerHTML = 'You win';
+            playerBg.classList.add('show');
             playerScore++;
         }
     }
+    replayButton.classList.add('show');
     localStorage.setItem('localPlayer', playerScore);
     localStorage.setItem('localHouse', houseScore);
     document.getElementById('player-score').innerHTML = playerScore;
     document.getElementById('house-score').innerHTML = houseScore;
-
+    modalButtons.classList.remove('hide');
 }
 
 //this function restarts the game while retaining the score (local storage variables)
 function play_again() {
     var elem2 = document.getElementById('clonedId');
-    elem2.parentNode.removeChild(elem2);
+    if (elem2 != null) {
+        elem2.parentNode.removeChild(elem2);
+    }
+
     var elem = document.getElementById('clonedId');
-    elem.parentNode.removeChild(elem);
+    if (elem != null) {
+        elem.parentNode.removeChild(elem);
+    }
+    replayButton.classList.remove('show');
+    playerBg.classList.remove('show');
+    houseBg.classList.remove('show');
     gameBox.classList.remove('show');
     bottomBox.classList.remove('hide');
     

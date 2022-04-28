@@ -150,6 +150,35 @@ body {
     font-size: 30px;
 }
 
+.player-color-box {
+    opacity: 0;
+    width: 42vw;
+    height: 42vw;
+    border-radius: 50%;
+    position: absolute;
+    background: radial-gradient(rgba(255, 255, 255, 0.08)  , rgba(255, 255, 255, 0.08) 41%, rgba(255, 255, 255, 0.05) 40%, rgba(255, 255, 255, 0.05) 56%, rgba(255, 255, 255, 0.02) 55%, rgba(255, 255, 255, 0.02) 100%);
+    z-index: -1;
+}
+
+.player-color-box.show {
+    
+    opacity: 1;
+}
+
+.house-color-box {
+    opacity: 0;
+    width: 42vw;
+    height: 42vw;
+    border-radius: 50%;
+    position: absolute;
+    background: radial-gradient(rgba(255, 255, 255, 0.08)  0%, rgba(255, 255, 255, 0.08) 40%, rgba(255, 255, 255, 0.05) 40%, rgba(255, 255, 255, 0.05) 55%, rgba(255, 255, 255, 0.02) 55%, rgba(255, 255, 255, 0.02) 100%);
+    z-index: -1;
+}
+
+.house-color-box.show {
+    opacity: 1;
+}
+
 .box-house h1 {
     top: -90px;
     color: white;
@@ -157,6 +186,7 @@ body {
     font-weight: 100;
     font-size: 30px;
 }
+
 
 .house-pick, .player-pick {
     width: 100%;
@@ -307,11 +337,47 @@ button {
     
 }
 
-.rematch {
+.buttons.hide {
+    display: none;
+}
+
+#delay1, #delay2, #delay3 {
+    display: none;
+    pointer-events: none;
+    color: transparent;
+}
+
+.delay-box {
+    position: absolute;
+    font-size:80px;
+    top: 47%;
+}
+
+#delay1.show, #delay2.show, #delay3.show {
     display: flex;
+    color: white;
+}
+
+#delay3.show {
+    display: flex;
+    color: white;
+}
+
+#delay2.show {
+    display: flex;
+    color: white;
+}
+
+.rematch {
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
+}
+
+.rematch.show {
+    display: flex;
 }
 
 #match-results {
@@ -324,12 +390,14 @@ button {
 
 #rematch-button {
     background-color: white;
+    color: #1e3453;
     width: 100%;
     height: 50px;
     font-size: 20px;
     border-radius: 5px;
     pointer-events: auto;
     margin: 20px;
+    cursor: pointer;
 }
 
 .reset, .rules {
@@ -361,7 +429,8 @@ button {
 
 @media (max-width: 1030px) {
     .box-house h1, .box-player h1 {
-        font-size: 20px;
+        text-align: center;
+        font-size: 17px;
     }
 
     .box-house, .box-player {
@@ -387,6 +456,11 @@ button {
 }
 
 @media (max-width: 583px) {
+
+    .image-box {
+        margin-top: 50px;
+    }
+
     .rules-modal {
         position: relative;
         justify-content: space-evenly;
@@ -417,28 +491,53 @@ button {
         padding-bottom: 60px;
     }
 
+    .delay-box {
+        font-size: 150px;
+        top: 60%;
+    }
+
+    .player-color-box, .house-color-box {
+        width: 80vw;
+        height: 80vw;
+    }
+
+    .player-color-box {
+        margin-left: 5px;
+    }
+
+    .house-color-box {
+        margin-right: 5px;
+    }
+
     #rematch-button {
-        height: 30px;
-        width: 100px;
-        font-size: 12px;
+        top: 67vh;
+        position: absolute;
+        height: 50px;
+        width: 250px;
+        font-size: 20px;
         margin: 10px;
     }
 
     #match-results {
-        font-size: 20px;
+        position: absolute;
+        top: 60%;
+        font-size: 55px;
     }
 
     .box-house h1, .box-player h1 {
-        padding-top: 30px;
-        width: 100px;
-        font-size: 15px;
+        padding-top: 265px;
+        width: 124px;
+        font-size: 16px;
     }
 
     .box-house, .box-player {
-        margin: 18px;
-        width: 100%;
-        height: 100%;
+        margin: 20px;
     }
+
+    #game-box {
+        margin: 0;
+    }
+    
 
     .outer-icon-box {
         height: 80px;
@@ -446,8 +545,15 @@ button {
         box-shadow: inset 0px -3.5px 1px 0px rgb(0 0 0 / 35%);
     }
 
+    .player-choices img {
+        height: 90px;
+    }
+    
     .top-box {
-        width: 100%;
+        padding: 5px;
+        width: 90%;
+        margin-top: 10px;
+        margin-bottom: 80px;
     }
 
     .bottom-box {
@@ -458,8 +564,17 @@ button {
         margin-left: 9px;
     }
 
+    #player-pick {
+        margin-left: 5px;
+    }
+
+    #house-pick {
+        margin-right: 5px;
+    }
+
     .score-box {
         margin-right: 5px;
+        font-size: 14px;
     }
 
     .pentagon {
@@ -468,19 +583,19 @@ button {
     }
 
     .icon-box {
-        width: 80px;
-        height: 80px;
+        width: 100%;
+        height: 100%;
     }
 
     .icon-boundaries {
-        height: 62px;
-        width: 62px;
-        box-shadow: inset 0px 3px 3px 0px rgba(0, 0, 0, 0.247);
+        height: 75%;
+        width: 75%;
+        box-shadow: inset 0px 6px 2.5px 0px rgba(0, 0, 0, 0.247);
     }
 
     .buttons {
         flex-direction: column;
-        height: 110px;
+        height: 325px;
         padding-right: 0;
         justify-content: flex-end;
         align-items: center;
@@ -488,7 +603,10 @@ button {
     
     .reset, .rules {
         margin-left: 0px;
-        margin-bottom: 20px;
+    }
+
+    .rules {
+        margin-bottom: 8px;
     }
 
     #lizard {
