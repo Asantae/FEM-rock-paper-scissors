@@ -2,10 +2,8 @@
 ## Table of contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
-- [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
@@ -15,10 +13,7 @@
 
 ## Overview
 
-- creating an application that can run the game rock-paper-scissors, with no issues on mobile
-
-### The challenge
-
+- creating an application that can run the game rock-paper-scissors, mobile responsiveness
 ### Screenshot
 
 ![](./images/desktop-version.png)
@@ -30,21 +25,17 @@
 - GIthub URL: [https://github.com/Asantae/]
 - Live Site URL: [https://silver-sunshine-d556f6.netlify.app/]
 
-## My process
-
-
-
 ### Built with
 
 - Semantic HTML5 markup
-- CSS
-- API
+- CSS3
 - Javascript
 
 ### What I learned
 
 ```js
-
+-delay functions
+-local storage control
 ```
 ### Continued development
 
@@ -56,4 +47,6 @@
 ## Author
 
 - Twitter - [@AsantaeMS](https://www.twitter.com/AsantaeMS)
+- Github - [@Asantae](https://www.github.com/Asantae)
+
 
