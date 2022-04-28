@@ -15,6 +15,13 @@ img {
 
 body {
     background: radial-gradient(hsl(214, 47%, 23%),hsl(237, 49%, 15%)); 
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: scroll; 
+}
+  
+body::-webkit-scrollbar {
+    display: none;
 }
 
 .container {
@@ -434,8 +441,8 @@ button {
     }
 
     .box-house, .box-player {
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
     }
 
     #match-results {
@@ -510,7 +517,7 @@ button {
     }
 
     #rematch-button {
-        top: 67vh;
+        top: 530px;
         position: absolute;
         height: 50px;
         width: 250px;
@@ -520,7 +527,7 @@ button {
 
     #match-results {
         position: absolute;
-        top: 60%;
+        top: 475px;
         font-size: 55px;
     }
 
@@ -531,7 +538,7 @@ button {
     }
 
     .box-house, .box-player {
-        margin: 20px;
+        margin: 30px;
     }
 
     #game-box {
@@ -553,7 +560,7 @@ button {
         padding: 5px;
         width: 90%;
         margin-top: 0px;
-        margin-bottom: 80px;
+        margin-bottom: 60px;
     }
 
     .bottom-box {
@@ -595,7 +602,7 @@ button {
 
     .buttons {
         flex-direction: column;
-        height: 325px;
+        height: 275px;
         padding-right: 0;
         justify-content: flex-end;
         align-items: center;
