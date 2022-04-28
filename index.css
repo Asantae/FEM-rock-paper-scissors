@@ -107,7 +107,7 @@ body::-webkit-scrollbar {
 
 /* inner content (main 2 boxes) of site */
 .inner-boxes {
-    padding-top:25px;
+    padding-top:10px;
     display: flex;
     justify-content: center;
     align-items: center;
